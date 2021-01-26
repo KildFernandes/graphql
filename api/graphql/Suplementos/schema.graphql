@@ -1,0 +1,16 @@
+type Produto{
+    id: ID!
+    produto: String!
+    valor: Float!
+}
+type Mutation{
+    realizarSuplementos(produto:String!,valor: Float!):Produto!
+}
+type Query {
+    status: String!
+    findAllSuplementos: [Produto!]!
+}
+
+type Subscription {
+    novoSuplementos: Produto!
+  }
