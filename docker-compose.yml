@@ -15,6 +15,6 @@ services:
     ports: 
       - "4000:4000"
     command: sh -c "npm install && npm run local"
-    working_dir: /api
+    working_dir: /app
     volumes:
       - ./api:/app

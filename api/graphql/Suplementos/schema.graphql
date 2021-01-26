@@ -2,10 +2,13 @@ type Produto{
     id: ID!
     produto: String!
     valor: Float!
+    status: String!
 }
 type Mutation{
-    realizarSuplementos(produto:String!,valor: Float!):Produto!
+    incluiSuplementos(produto:String!,valor: Float!,status: String):Produto!
+    deletarSuplementos(produto:String!,valor: Float!,status: String):Produto!
 }
+
 type Query {
     status: String!
     findAllSuplementos: [Produto!]!
@@ -13,4 +16,8 @@ type Query {
 
 type Subscription {
     novoSuplementos: Produto!
+  }
+
+type Subscription {
+    dellSuplementos: Produto!
   }
