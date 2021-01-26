@@ -15,11 +15,11 @@ const resolvers = {
             })
         },
         deletarSuplementos: (root, params,{pubsub}) => {
-            return Suplementos.dellSuplementos(params).then(Suplementos => {
+            return Suplementos.dellSuplementos(params).then(result => {
                 pubsub.publish('PUBSUB_DELL_SUPLEMENTOS', {
-                    dellSuplementos:Suplementos
+                    suplementos: Suplementos.getSuplementos()
                 });
-                return Suplementos 
+                return result 
             })
         },
 
@@ -31,11 +31,6 @@ const resolvers = {
             return pubsub.asyncIterator('PUBSUB_NOVO_SUPLEMENTOS')
           },
         },
-        dellSuplementos: {
-            subscribe: (_, __, { pubsub }) => {
-              return pubsub.asyncIterator('PUBSUB_DELL_SUPLEMENTOS')
-            },
-          },
 
     },
 

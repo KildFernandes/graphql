@@ -18,6 +18,3 @@ type Subscription {
     novoSuplementos: Produto!
   }
 
-type Subscription {
-    dellSuplementos: Produto!
-  }
